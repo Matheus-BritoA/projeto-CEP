@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de CEP</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+  <div class="container">
+    <div class="cabecalho">
+      <h1>📮 Busca CEP</h1>
+      <p>Encontre endereços pelo CEP brasileiro</p>
+    </div>
+
+
+    <div class="formulario">
+      <label for="input-cep">Digite o CEP:</label>
+      <input
+        type="text"
+        id="input-cep"
+        placeholder="00000-000"
+        maxlength="8"
+      >
+      <p class="exemplo">Exemplo: 01310-100</p>
+    </div>
+
+
+    <div id="mensagem-erro" class="mensagem-erro mensagem-erro-cep-invalido">
+      <p class="titulo-erro">❌ Erro! </p>
+      <p id="texto-erro">CEP no formato incorreto. Coloque 8 digitos para buscar.</p>
+    </div>
+
+
+    <button id="btn-buscar" class="btn-buscar">
+      🔍 Buscar Endereço
+    </button>
+
+
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+      <p>Buscando...</p>
+    </div>
+
+
+    <div id="card-resultado" class="card-resultado">
+      <h2>📍 Endereço Encontrado</h2>
+     
+      <div class="info-linha">
+        <span class="label">CEP:</span>
+        <span id="resultado-cep"></span>
+      </div>
+     
+      <div class="info-linha">
+        <span class="label">Rua:</span>
+        <span id="resultado-rua"></span>
+      </div>
+     
+      <div class="info-linha">
+        <span class="label">Bairro:</span>
+        <span id="resultado-bairro"></span>
+      </div>
+     
+      <div class="info-linha">
+        <span class="label">Cidade:</span>
+        <span id="resultado-cidade"></span>
+      </div>
+     
+      <div class="info-linha">
+        <span class="label">Estado:</span>
+        <span id="resultado-estado"></span>
+      </div>
+    </div>
+
+
+    <div id="card-mapa" class="card-mapa">
+      <h2>🗺️ Localização no Mapa</h2>
+      <iframe
+        id="mapa-iframe"
+        width="100%"
+        height="350"
+        style="border:0;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="">
+      </iframe>
+    </div>
+
+
+    <div id="mensagem-erro" class="mensagem-erro mensagem-erro-cep-nao-encontrado">
+      <p class="titulo-erro">❌ Erro!</p>
+      <p id="texto-erro">CEP não encontrado.</p>
+    </div>
+
+
+    <div class="contador">
+      <p>Consultas realizadas: <span id="contador">0</span></p>
+    </div>
+
+
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+
+
+</html>
+
